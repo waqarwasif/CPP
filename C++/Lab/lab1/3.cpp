@@ -56,11 +56,11 @@ class Student{
 // }
 void Student :: print()
 {
-
-    cout<<name<<endl;
-    cout<<rollno<<endl;
+    int i = 1;
+    cout<<"Student name : "<<name<<endl;
+    cout<<"Roll no : "<<rollno<<endl;
     for(const int &mark : marks){
-                    cout << mark <<endl;
+                    cout << "Quiz " << i++ << " : " << mark <<endl;
                 }
     
 }
@@ -69,8 +69,8 @@ void Student :: avg(){
     float avg=0;
     for(const int &mark : marks){
                     avg +=mark;
-                    cout<<"avg : "<< avg/3<<endl;
                 }
+                cout<<"avg : "<< avg/3<<endl;
     
 }
 
@@ -84,6 +84,7 @@ int main(){
     s1.setroll(123);
     s1.setMarks({88,99,100});
     s1.print();
+    s1.avg();
 
 
 }
