@@ -1,20 +1,24 @@
 #include<iostream>
 // #include<vector>
 // #include<string>
- 
 
 class ComplexNumber{
 
     int real;
     int img;
     public:
+        ComplexNumber() {
+            std::cout << "Complex Number Created" << std::endl;
+        }
         void print ();
-        void setReal(int r){
-                real = r;
+        void setReal(){
+                std::cout<<"Enter real part "<<std::endl;
+                std::cin >> real;
             }
             
-            void setImg(int i){
-                img = i;
+            void setImg(){
+                std::cout<<"Enter imaginary part "<<std::endl;
+                std::cin >> img;
             }    
 
     private:
@@ -38,14 +42,11 @@ void ComplexNumber::print()
 }
 
 
-
 int main(){
 
-    std :: cout << "start";
     ComplexNumber n1 ;
-    n1.setReal(4);
-    n1.setImg(-3);
+    n1.setReal();
+    n1.setImg();
     n1.print();
     
-
 }

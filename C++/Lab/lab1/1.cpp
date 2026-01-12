@@ -2,7 +2,6 @@
 #include<vector>
 #include<string>
  
-
 class MyCar{
 
     public:
@@ -12,11 +11,9 @@ class MyCar{
         }
         private:
 
-    protected:
-        
+    protected:     
 
 };
-
 
 
 int main(){
