@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+class Record{
+
+    string name;
+    int age;
+    float gpa;
+    public:
+    void set(){
+        cout<<"name: "<<endl;
+        cin>>name;
+        cout<<"age: "<<endl;
+        cin>>age;
+        cout<<"gpa: "<<endl;
+        cin>>gpa;
+    }
+    
+    Record(){}
+    void display();
+    
+
+};
+void Record::display(){
+    cout<<"name "<<name<<endl;
+    cout<<"age "<<age<<endl;
+    cout<<"gpa "<<gpa<<endl;
+
+}
+
+int main(){
+    Record R[10];
+    for (int i = 0;i<10;i++){
+        R[i].set();
+
+    }
+    for (int i = 0;i<10;i++){
+        R[i].display();
+        
+    }
+
+}
+
+
