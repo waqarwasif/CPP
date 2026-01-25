@@ -28,12 +28,14 @@ void Record::display(){
 }
 
 int main(){
-    Record R[10];
-    for (int i = 0;i<10;i++){
+    Record R[2];
+    for (int i = 0;i<2;i++){
+        cout<<"Enter details for record "<<i+1<<endl;
         R[i].set();
 
     }
-    for (int i = 0;i<10;i++){
+    for (int i = 0;i<2;i++){
+        cout<<"Details of record "<<i+1<<endl;
         R[i].display();
         
     }
