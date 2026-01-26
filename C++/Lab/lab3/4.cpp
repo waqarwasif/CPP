@@ -26,7 +26,7 @@ int main(){
     My_Class c1[2]={My_Class(1,2),My_Class(3,4)};
     My_Class c2(88,99),*pointer;
 
-    pointer = c1;
+    pointer = c1; // as array name is also an address so no need of '&'
 
     for (int i=0;i<2;i++){
         c1[i].display();

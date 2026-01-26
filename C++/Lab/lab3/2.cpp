@@ -18,8 +18,8 @@ class My_Class{
 
 int main(){
 
-    My_Class c1[2]={My_Class(1,2),My_Class(3,4)};
-    for (int i=0;i<2;i++){
-        c1[i].display();
+    My_Class arr1[2] = {My_Class(3,4),My_Class(4,5)};
+    for(int i = 0;i<2;i++){
+        arr1[i].display();
     }
 }

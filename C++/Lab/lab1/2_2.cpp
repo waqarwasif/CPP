@@ -1,52 +1,52 @@
-#include<iostream>
+#include <iostream>
 // #include<vector>
 // #include<string>
 
-class ComplexNumber{
+class ComplexNumber
+{
 
     int real;
     int img;
-    public:
-        ComplexNumber() {
-            std::cout << "Complex Number Created" << std::endl;
-        }
-        void print ();
-        void setReal(){
-                std::cout<<"Enter real part "<<std::endl;
-                std::cin >> real;
-            }
-            
-            void setImg(){
-                std::cout<<"Enter imaginary part "<<std::endl;
-                std::cin >> img;
-            }    
 
-    private:
-            
+public:
+    ComplexNumber()
+    {
+        std::cout << "Complex Number Created" << std::endl;
+    }
+    void print();
+    void setReal()
+    {
+        std::cout << "Enter real part " << std::endl;
+        std::cin >> real;
+    }
 
-    protected:
-        
+    void setImg()
+    {
+        std::cout << "Enter imaginary part " << std::endl;
+        std::cin >> img;
+    }
 
+private:
+protected:
 };
 void ComplexNumber::print()
+{
+    if (img < 0)
     {
-            if (img<0)
-            {
-                
-                std::cout<<" The Complex number is : "<< real << img<<"i";
-            }
-            else{
-                std::cout<<" The Complex number is : "<< real <<"+"<< img<<"i";
 
-            }
+        std::cout << " The Complex number is : " << real << img << "i";
+    }
+    else
+    {
+        std::cout << " The Complex number is : " << real << "+" << img << "i";
+    }
 }
 
+int main()
+{
 
-int main(){
-
-    ComplexNumber n1 ;
+    ComplexNumber n1;
     n1.setReal();
     n1.setImg();
     n1.print();
-    
 }
