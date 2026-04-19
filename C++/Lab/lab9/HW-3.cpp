@@ -9,8 +9,9 @@ class Salary
     float NetPay;
 
 public:
-    Salary(float gross, float deductions, float net) : GrossPay(gross), Deductions(deductions) { NetPay = GrossPay - Deductions; }
-    Salary()
+    Salary() : GrossPay(0), Deductions(0), NetPay(0) {}
+    Salary(float gross, float deductions) : GrossPay(gross), Deductions(deductions) { NetPay = GrossPay - Deductions; }
+    void input()
     {
         cout << "Enter Gross Pay: ";
         cin >> GrossPay;
@@ -34,9 +35,9 @@ class Date
     int year;
 
 public:
-    Date(int d, int m, int y) : day(d), month(m), year(y) {}
-    Date()
-    {
+Date() : day(0), month(0), year(0) {}    
+Date(int d, int m, int y) : day(d), month(m), year(y) {}
+void input()   {
         cout << "Enter Date of Joining (day month year): ";
         cin >> day >> month >> year;
     }
@@ -65,6 +66,28 @@ public:
     ~Employee()
     {
         delete name;
+    }
+
+    Employee& operator=(const Employee& other){
+        if(this != &other)
+        {
+            delete name;
+            name = new string(*other.name);
+            salary = other.salary;
+            date_of_joining = other.date_of_joining;
+            id = other.id;
+
+        }
+        return *this;
+
+    }
+    void input(int id_)
+    {
+        id = id_;
+        cout << "Enter Employee Name: ";
+        getline(cin, *name);
+        salary.input();
+        date_of_joining.input();
     }
     void display()
     {
@@ -97,11 +120,13 @@ public:
     {
         delete[] employees;
     }
-    int Add(const string& name)
+    int Add()
     {
         if (count < capacity)
         {
-            employees[count++] = Employee(name, count);
+
+            employees[count].input(count + 1); // Pass current count as ID
+            count++;
             return 1;
         }
         else
@@ -163,10 +188,8 @@ int main()
         switch (choice)
         {
         case 1:
-            cout << "Enter Employee Name: ";
-            cin.ignore();
-            getline(cin, name);
-            db.Add(name);
+            cin.ignore(); 
+            db.Add();
             break;
         case 2:
             cout << "Enter Employee Name to Delete: ";
