@@ -1,40 +1,45 @@
-#include<iostream>
+#include<iostream> 
 using namespace std;
-class DynamicArray {
-   private:
-       int* arr;
-       int size;
+
+class DynamicArray{
+    int* data;
+    int size;
+
     public:
     DynamicArray(int s):size(s){
-        arr = new int[size];
 
+        data = new int[size];
     }
 
-    ~DynamicArray(){
-        cout<<"deleting";
-        delete [] arr;
-    }
-    void setvalues(){
-        for (int i = 0; i < 2; i++)
-        {
-            cout<< "enter value"<< i+1<<endl;
-            cin>> arr[i] ;
+    void setValue(int index, int val){
+        if (index>=0 || index<size){
+            data[index] = val;
         }
-    }
-    void display();
-};
-void DynamicArray::display(){
-    for(int i=0;i<2;i++){
-        cout<<arr[i]<<endl;
+
     }
 
+    int getValue(int index) const
+    {
+        if (index >= 0 && index < size)
+        {
+            return data[index];
+        }
+        return -1; // Basic error handling
+    }
+    ~DynamicArray(){
+        cout<<"dynamic";
+        delete[] data;
+        
 
 }
+};
 
-int main(){
-    DynamicArray a1(2);
-    a1.setvalues();
-    a1.display();
-    
-
+int main()
+{
+    DynamicArray obj(5); // Constructor called
+    obj.setValue(0, 10);
+    obj.setValue(1, 20);
+    obj.setValue(2, 30);
+    std::cout << "Value at index 1: " << obj.getValue(1) << std::endl;
+    // The destructor is called automatically when 'obj' goes out of scope.return 0;
 }
