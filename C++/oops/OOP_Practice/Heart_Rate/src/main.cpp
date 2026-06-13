@@ -1,6 +1,5 @@
 #include <iostream>
-#include "..\include\heartrate.h" 
-
+#include "..\include\heartrate.h"
 using namespace std;
 
 int main()
